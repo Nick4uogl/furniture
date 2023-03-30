@@ -13,21 +13,25 @@ import SwiperButton from "./SwiperButton";
 function ProductsSlider() {
   let products = [
     {
+      id: "1",
       img: image1,
       name: "Полички",
       price: 2000,
     },
     {
+      id: "2",
       img: image2,
       name: "Ліжко двоспальне",
       price: 12000,
     },
     {
+      id: "3",
       img: image3,
       name: "Ліжко",
       price: 8000,
     },
     {
+      id: "4",
       img: image4,
       name: "Стіл",
       price: 4000,
@@ -41,8 +45,6 @@ function ProductsSlider() {
         <Swiper
           modules={[Navigation]}
           spaceBetween={42}
-          onSlideChange={() => console.log("slide change")}
-          onSwiper={(swiper) => console.log(swiper)}
           className="products-slider-block"
           breakpoints={{
             768: {
@@ -56,7 +58,7 @@ function ProductsSlider() {
           <SwiperButton />
           {products.map((product) => {
             return (
-              <SwiperSlide className="products-slider__slide">
+              <SwiperSlide key={product.id} className="products-slider__slide">
                 <a href="/#" className="products-slider__link">
                   <img src={product.img} alt="Полички" />
                   <div className="products-slide-info">

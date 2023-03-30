@@ -3,9 +3,13 @@ import logo from "../../img/logo.png";
 import phone from "../../img/icons/phone.svg";
 import basket from "../../img/icons/basket.svg";
 import "./Header.scss";
+import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import CartContext from "../../CartContext";
 
 function Header() {
   const [isActive, setIsActive] = useState(false);
+  const { countItems } = useContext(CartContext);
 
   const handleClick = () => {
     setIsActive((isActive) => {
@@ -31,22 +35,43 @@ function Header() {
   return (
     <div className="header">
       <div className="header__container">
-        <a href="/#" className="header__logo logo">
+        <NavLink to={"/"} className="header__logo logo">
           <img src={logo} alt="" />
           <p className="logo__title">
             <span>Меблі</span> від дяді Жори
           </p>
-        </a>
+        </NavLink>
         <div className={isActive ? "menu-overlay" : ""} onClick={handleOverlay}>
           <ul className={`menu ${isActive ? "menu-active" : ""}`}>
             <li className="menu__item menu__item--active">
-              <a href="/#">Головна</a>
+              <NavLink
+                to={"/"}
+                className={({ isActive, isPending }) =>
+                  isActive ? "active-item" : isPending ? "pending" : ""
+                }
+              >
+                Головна
+              </NavLink>
             </li>
             <li className="menu__item">
-              <a href="/#">Про нас</a>
+              <NavLink
+                to={"/about"}
+                className={({ isActive, isPending }) =>
+                  isActive ? "active-item" : isPending ? "pending" : ""
+                }
+              >
+                Про нас
+              </NavLink>
             </li>
             <li className="menu__item">
-              <a href="/#">Товари</a>
+              <NavLink
+                to={"/products"}
+                className={({ isActive, isPending }) =>
+                  isActive ? "active-item" : isPending ? "pending" : ""
+                }
+              >
+                Товари
+              </NavLink>
             </li>
           </ul>
         </div>
@@ -55,9 +80,12 @@ function Header() {
             <img src={phone} alt="" />
             <p>+380960981783</p>
           </a>
-          <a href="/#" className="header__basket">
+          <NavLink to={"/cart"} className="header__basket">
             <img src={basket} alt="" />
-          </a>
+            {countItems !== 0 && (
+              <span className="header__cart-count">{countItems}</span>
+            )}
+          </NavLink>
         </div>
         {!isActive ? (
           <div className="burger" onClick={handleClick}>

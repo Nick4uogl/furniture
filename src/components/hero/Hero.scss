@@ -2,8 +2,6 @@
 @import "../../scss/variables.scss";
 
 .hero {
-    padding: 0px 0px 0px 0px;
-
     &__wrapper {
         position: relative;
     }
@@ -18,12 +16,7 @@
 
         @media (min-width: $mobile) {
             padding: 0px 15px;
-            padding-top: 173px;
-        }
-
-        padding-top: 173px;
-        @media (max-width: $mobile) {
-            padding-top: 80px;
+            padding-top: 93px;
         }
     }
 
@@ -86,6 +79,10 @@
                 color: #fff;
             }
         }
+    }
+
+    @media (min-width: $mobile) and (max-height: 500px) {
+        bottom: 50px;
     }
 }
 
