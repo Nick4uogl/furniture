@@ -1,12 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.b1723f1c.css",
-    "main.js": "/static/js/main.d032bf0d.js",
+    "main.css": "/static/css/main.04cfefc0.css",
+    "main.js": "/static/js/main.9348e158.js",
     "static/media/image3.jpg": "/static/media/image3.bf72fcbb682c36d60959.jpg",
     "static/media/image4.jpg": "/static/media/image4.97ce049d162f790508dc.jpg",
+    "static/media/map.jpg": "/static/media/map.a36ebf8c0675332d5b9f.jpg",
     "static/media/mainBg.jpg": "/static/media/mainBg.2bda8cdbc84b383b475e.jpg",
     "static/media/image2.jpg": "/static/media/image2.ea641aa355d794e74cd8.jpg",
     "static/media/advantagesImg.jpg": "/static/media/advantagesImg.3f328f5e8a047f4c3ab6.jpg",
+    "static/media/bed.jpg": "/static/media/bed.19e2f047ec8f957c7ca5.jpg",
     "static/media/image1.jpg": "/static/media/image1.7c87cf683f259a973181.jpg",
     "static/media/product1.jpg": "/static/media/product1.3f92f2adf2e82fc1257d.jpg",
     "static/media/product3.jpg": "/static/media/product3.2465e915e7874b8cc901.jpg",
@@ -16,16 +18,19 @@
     "static/media/product4.jpg": "/static/media/product4.54369ccd38fbb40f9587.jpg",
     "static/media/phone.svg": "/static/media/phone.7024255bc7b531108726c40a4d0c0173.svg",
     "static/media/instagram.svg": "/static/media/instagram.d012fe1ab224de144fcfc38080112162.svg",
+    "static/media/plus.svg": "/static/media/plus.7294098e04b5e86175c9d36cd35c5f5d.svg",
     "static/media/basket.svg": "/static/media/basket.9a73ac37a7549b9020e16f8213fb266f.svg",
     "static/media/checked.svg": "/static/media/checked.350c57ee2cf63cb44609.svg",
+    "static/media/minus.svg": "/static/media/minus.b196318d5565c0d019f25d74965ce22d.svg",
+    "static/media/delete.svg": "/static/media/delete.87b5e77f847219ababe5c3acc7db4ff5.svg",
     "index.html": "/index.html",
     "static/media/telegram.svg": "/static/media/telegram.428705127619f015438ab4c96875cfea.svg",
     "static/media/facebook.svg": "/static/media/facebook.0812bb2027fce6cfbf62787e9f8e52a7.svg",
-    "main.b1723f1c.css.map": "/static/css/main.b1723f1c.css.map",
-    "main.d032bf0d.js.map": "/static/js/main.d032bf0d.js.map"
+    "main.04cfefc0.css.map": "/static/css/main.04cfefc0.css.map",
+    "main.9348e158.js.map": "/static/js/main.9348e158.js.map"
   },
   "entrypoints": [
-    "static/css/main.b1723f1c.css",
-    "static/js/main.d032bf0d.js"
+    "static/css/main.04cfefc0.css",
+    "static/js/main.9348e158.js"
   ]
 }
