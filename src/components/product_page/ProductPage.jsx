@@ -2,8 +2,12 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import "./ProductPage.scss";
 import bed from "../../img/gallery/bed.jpg";
+import { useContext } from "react";
+import CartContext from "../../CartContext";
 
 function ProductPage() {
+  const {increaseProductItems} = useContext(CartContext)
+
   const { productId } = useParams();
   console.log(productId);
   return (

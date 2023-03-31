@@ -7,6 +7,7 @@ import product4 from "../../img/products/product4.jpg";
 import product5 from "../../img/products/product5.jpg";
 import product6 from "../../img/products/product6.jpg";
 import ProductsList from "../products_list/ProductsList.jsx";
+import { motion } from "framer-motion";
 
 let products = [
   {
@@ -53,11 +54,34 @@ let products = [
   },
 ];
 
+const textVariants = {
+  offscreen: {
+    x: -50,
+    opacity: 0,
+  },
+  onscreen: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      bounce: 0.4,
+      duration: 1,
+    },
+  },
+};
+
 function Products() {
   return (
-    <section className="products">
+    <section className="products" id="products">
       <div className="products__container">
-        <h2 className="products__title">Наші товари</h2>
+        <motion.h2
+          variants={textVariants}
+          initial="offscreen"
+          whileInView="onscreen"
+          className="products__title"
+        >
+          Наші товари
+        </motion.h2>
         <ProductsList products={products} />
         <button className="products__load-more">Завантажити ще</button>
       </div>

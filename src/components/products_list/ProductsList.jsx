@@ -13,9 +13,10 @@ function ProductsList({ products }) {
 
   return (
     <div className="products-list">
-      {products.map((product) => {
+      {products.map((product, index) => {
         return (
           <Product
+            custom={index + 1}
             key={product.id}
             id={product.id}
             img={product.img}

@@ -1,15 +1,58 @@
 import React from "react";
 import "./Advantages.scss";
 import advantagesImg from "../../img/advantagesImg.jpg";
+import { motion } from "framer-motion";
 
 function Advantages() {
+  const textVariants = {
+    offscreen: {
+      x: 100,
+      opacity: 0,
+    },
+    onscreen: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        bounce: 0.4,
+        duration: 1,
+      },
+    },
+  };
+
+  const imgVariants = {
+    offscreen: {
+      x: -100,
+      opacity: 0,
+    },
+    onscreen: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        bounce: 0.4,
+        duration: 1,
+      },
+    },
+  };
+
   return (
     <section className="advantages">
       <div className="advantages__container">
-        <div className="advantages__img">
+        <motion.div
+          variants={imgVariants}
+          initial="offscreen"
+          whileInView="onscreen"
+          className="advantages__img"
+        >
           <img src={advantagesImg} alt="Team" />
-        </div>
-        <div className="advantages__right">
+        </motion.div>
+        <motion.div
+          variants={textVariants}
+          initial="offscreen"
+          whileInView="onscreen"
+          className="advantages__right"
+        >
           <h2 className="advantages__title">Чому варто обрати саме нас ?</h2>
           <ul className="advantages__list">
             <li className="advantages__item">
@@ -26,7 +69,7 @@ function Advantages() {
               Робимо все відповідно ваших вимог та креслень.
             </li>
           </ul>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

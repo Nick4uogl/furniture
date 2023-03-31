@@ -9,6 +9,7 @@ import image4 from "../../img/gallery/image4.jpg";
 import "swiper/scss";
 import "swiper/scss/navigation";
 import SwiperButton from "./SwiperButton";
+import { motion } from "framer-motion";
 
 function ProductsSlider() {
   let products = [
@@ -38,10 +39,33 @@ function ProductsSlider() {
     },
   ];
 
+  const textVariants = {
+    offscreen: {
+      y: -50,
+      opacity: 0,
+    },
+    onscreen: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        bounce: 0.4,
+        duration: 1,
+      },
+    },
+  };
+
   return (
     <section className="products-slider">
       <div className="products-slider__container">
-        <h2 className="products-slider__title">Що купують інші ?</h2>
+        <motion.h2
+          variants={textVariants}
+          initial="offscreen"
+          whileInView="onscreen"
+          className="products-slider__title"
+        >
+          Що купують інші ?
+        </motion.h2>
         <Swiper
           modules={[Navigation]}
           spaceBetween={42}

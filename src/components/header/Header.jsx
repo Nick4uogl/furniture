@@ -35,7 +35,7 @@ function Header() {
   return (
     <div className="header">
       <div className="header__container">
-        <NavLink to={"/"} className="header__logo logo">
+        <NavLink to={"/furniture"} className="header__logo logo">
           <img src={logo} alt="" />
           <p className="logo__title">
             <span>Меблі</span> від дяді Жори
@@ -45,7 +45,7 @@ function Header() {
           <ul className={`menu ${isActive ? "menu-active" : ""}`}>
             <li className="menu__item menu__item--active">
               <NavLink
-                to={"/"}
+                to={"/furniture"}
                 className={({ isActive, isPending }) =>
                   isActive ? "active-item" : isPending ? "pending" : ""
                 }

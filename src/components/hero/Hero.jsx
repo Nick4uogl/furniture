@@ -6,23 +6,51 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import "./Hero.scss";
+import { Link } from "react-scroll";
+import { motion } from "framer-motion";
 
 function Hero() {
   SwiperCore.use([Pagination, Autoplay]);
+  const textVariants = {
+    offscreen: {
+      y: -100,
+      opacity: 0,
+    },
+    onscreen: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        bounce: 0.4,
+        duration: 1,
+      },
+    },
+  };
+
   return (
     <div className="hero">
       <div className="hero__wrapper">
         <div className="hero__container">
-          <div className="hero-info">
+          <motion.div
+            variants={textVariants}
+            initial="offscreen"
+            whileInView="onscreen"
+            className="hero-info"
+          >
             <h1 className="hero-info__title">ЯКІСНІ МЕБЛІ ПРОСТО ДЛЯ ВАС</h1>
             <p className="hero-info__text">
               Наша компанія використовує найкращі матеріали, щоб зробити ваш
               будинок комфортнішим.
             </p>
-            <a href="/#" className="hero-info__btn">
+            <Link
+              to="products"
+              duration={500}
+              smooth={true}
+              className="hero-info__btn"
+            >
               Перейти до товарів
-            </a>
-          </div>
+            </Link>
+          </motion.div>
           <Swiper
             slidesPerView={1}
             modules={[Pagination, Autoplay]}

@@ -4,11 +4,39 @@ import "./Product.scss";
 import { useContext } from "react";
 import CartContext from "../../CartContext";
 
-function Product({ id, img, name, label, price }) {
+import { motion } from "framer-motion";
+
+const productVariants = {
+  offscreen: {
+    y: -60,
+    opacity: 0,
+  },
+  onscreen: (i) => {
+    const delay = 0.3 + i * 0.05;
+    return {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        bounce: 0.4,
+        duration: 1,
+        delay,
+      },
+    };
+  },
+};
+
+function Product({ custom, id, img, name, label, price }) {
   const { increaseProductItems } = useContext(CartContext);
 
   return (
-    <article className="product">
+    <motion.article
+      variants={productVariants}
+      custom={custom}
+      initial="offscreen"
+      whileInView="onscreen"
+      className="product"
+    >
       <img src={img} alt="" />
       <p className="product__title">{name}</p>
       <p className="product__label">
@@ -42,7 +70,7 @@ function Product({ id, img, name, label, price }) {
       <a href="/#" className="product__info product__info-nohover">
         Детальніше
       </a>
-    </article>
+    </motion.article>
   );
 }
 

@@ -73,6 +73,7 @@
         background: rgba(197, 255, 253, 0.8);
         border-radius: 10px;
         transition: all 0.3s ease;
+        cursor: pointer;
         @media (any-hover: hover) {
             &:hover {
                 background-color: rgba(143, 223, 220, 0.8);
