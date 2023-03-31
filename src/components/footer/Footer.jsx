@@ -9,7 +9,7 @@ function Footer() {
   return (
     <div className="footer">
       <div className="footer__container">
-        <a href="/etalon" className="footer-logo">
+        <a href="/" className="footer-logo">
           <img src={logo} alt="logo" />
           <p className="footer-logo__title">
             <span>Меблі</span> від дяді Жори

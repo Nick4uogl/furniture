@@ -1,6 +1,6 @@
 {
-  "homepage": "http://Nick4uogl.github.io/etalon",
-  "name": "furniture_ecommerce",
+  "homepage": "http://Nick4uogl.github.io/furniture",
+  "name": "furniture",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
