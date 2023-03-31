@@ -55,7 +55,7 @@ function Product({ custom, id, img, name, label, price }) {
         >
           Добавити в корзину
         </button>
-        <Link className="product__info" to={`/${id}`}>
+        <Link className="product__info" to={`/furniture/${id}`}>
           Детальніше
         </Link>
       </div>
@@ -67,9 +67,12 @@ function Product({ custom, id, img, name, label, price }) {
       >
         Добавити в корзину
       </button>
-      <a href="/#" className="product__info product__info-nohover">
+      <Link
+        to={`/furniture/${id}`}
+        className="product__info product__info-nohover"
+      >
         Детальніше
-      </a>
+      </Link>
     </motion.article>
   );
 }

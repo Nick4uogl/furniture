@@ -6,7 +6,7 @@ import { useContext } from "react";
 import CartContext from "../../CartContext";
 
 function ProductPage() {
-  const {increaseProductItems} = useContext(CartContext)
+  const { increaseProductItems } = useContext(CartContext);
 
   const { productId } = useParams();
   console.log(productId);
@@ -43,7 +43,14 @@ function ProductPage() {
           </div>
 
           <p className="product-page__price">12 000 грн.</p>
-          <button className="add-to-cart">Додати в корзину</button>
+          <button
+            className="add-to-cart"
+            onClick={() => {
+              increaseProductItems();
+            }}
+          >
+            Додати в корзину
+          </button>
         </div>
       </div>
     </div>

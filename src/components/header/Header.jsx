@@ -55,7 +55,7 @@ function Header() {
             </li>
             <li className="menu__item">
               <NavLink
-                to={"/about"}
+                to={"furniture/about"}
                 className={({ isActive, isPending }) =>
                   isActive ? "active-item" : isPending ? "pending" : ""
                 }
@@ -65,7 +65,7 @@ function Header() {
             </li>
             <li className="menu__item">
               <NavLink
-                to={"/products"}
+                to={"furniture/products"}
                 className={({ isActive, isPending }) =>
                   isActive ? "active-item" : isPending ? "pending" : ""
                 }
@@ -80,7 +80,7 @@ function Header() {
             <img src={phone} alt="" />
             <p>+380960981783</p>
           </a>
-          <NavLink to={"/cart"} className="header__basket">
+          <NavLink to={"furniture/cart"} className="header__basket">
             <img src={basket} alt="" />
             {countItems !== 0 && (
               <span className="header__cart-count">{countItems}</span>

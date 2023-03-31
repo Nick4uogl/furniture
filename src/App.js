@@ -15,10 +15,10 @@ function App() {
       <div className="main">
         <Routes>
           <Route path="/furniture" element={<Main />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/products" element={<ProductsPage />} />
-          <Route path="/:productId" element={<ProductPage />} />
-          <Route path="/cart" element={<Cart />} />
+          <Route path="furniture/about" element={<About />} />
+          <Route path="furniture/products" element={<ProductsPage />} />
+          <Route path="furniture/:productId" element={<ProductPage />} />
+          <Route path="furniture/cart" element={<Cart />} />
         </Routes>
       </div>
       <Footer />
