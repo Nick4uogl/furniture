@@ -30,6 +30,18 @@
         height: 100%;
         z-index: -1;
     }
+
+    &__loading {
+        text-align: center;
+        margin-top: 100px;
+    }
+
+    &__error {
+        font-size: 24px;
+        font-weight: 500;
+        text-align: center;
+        margin-top: 70px;
+    }
 }
 
 .hero-info {

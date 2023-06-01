@@ -17,13 +17,14 @@
         }
     }
 
-    img {
+    &__image {
         position: relative;
         top: -18px;
         max-width: 100%;
         display: block;
         width: 100%;
         object-fit: cover;
+        flex: 1 1 auto;
     }
 
     &__title {
@@ -41,6 +42,9 @@
         font-size: rem(20);
         margin-bottom: 20px;
         text-align: start;
+        &.no-discount {
+            margin-top: 20px;
+        }
         @media (hover: none) {
             display: flex;
             justify-content: space-between;
@@ -138,4 +142,13 @@
             }
         }
     }
+}
+
+.flying-image {
+    position: fixed;
+    z-index: 3000;
+    top: -10;
+    left: 20;
+
+    transition: all 1s ease;
 }

@@ -1,6 +1,5 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import mainBg from "../../img/mainBg.jpg";
 import SwiperCore, { Pagination, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -8,24 +7,34 @@ import "swiper/css/autoplay";
 import "./Hero.scss";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
+import useFetch from "../../hooks/useFetch";
+
+const textVariants = {
+  offscreen: {
+    y: -100,
+    opacity: 0,
+  },
+  onscreen: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      bounce: 0.4,
+      duration: 1,
+    },
+  },
+};
 
 function Hero() {
   SwiperCore.use([Pagination, Autoplay]);
-  const textVariants = {
-    offscreen: {
-      y: -100,
-      opacity: 0,
-    },
-    onscreen: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        bounce: 0.4,
-        duration: 1,
-      },
-    },
-  };
+
+  const { data, loading, error } = useFetch(`http://localhost:3000/posters`);
+
+  if (error) {
+    return (
+      <p className="hero__error">Щось пішло не так, завантажуючи постери</p>
+    );
+  }
 
   return (
     <div className="hero">
@@ -51,31 +60,24 @@ function Hero() {
               Перейти до товарів
             </Link>
           </motion.div>
-          <Swiper
-            slidesPerView={1}
-            modules={[Pagination, Autoplay]}
-            className="hero-slider"
-            pagination={{ clickable: true }}
-            // loop={true}
-            // speed={1500}
-            // autoplay={{
-            //   delay: 3000,
-            //   disableOnInteraction: false,
-            // }}
-          >
-            <SwiperSlide className="hero-slider__slider">
-              <img src={mainBg} alt="" />
-            </SwiperSlide>
-            <SwiperSlide className="hero-slider__slider">
-              <img src={mainBg} alt="" />
-            </SwiperSlide>
-            <SwiperSlide className="hero-slider__slider">
-              <img src={mainBg} alt="" />
-            </SwiperSlide>
-            <SwiperSlide className="hero-slider__slider">
-              <img src={mainBg} alt="" />
-            </SwiperSlide>
-          </Swiper>
+          {loading ? (
+            <p className="hero__loading">...Loading</p>
+          ) : (
+            <Swiper
+              slidesPerView={1}
+              modules={[Pagination, Autoplay]}
+              className="hero-slider"
+              pagination={{ clickable: true }}
+            >
+              {data?.posters?.map((poster, i) => {
+                return (
+                  <SwiperSlide key={i} className="hero-slider__slider">
+                    <img key={i} src={poster.image} alt="poster" />
+                  </SwiperSlide>
+                );
+              })}
+            </Swiper>
+          )}
         </div>
       </div>
     </div>

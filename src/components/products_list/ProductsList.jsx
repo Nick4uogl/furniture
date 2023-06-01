@@ -3,7 +3,7 @@ import Product from "../product/Product.jsx";
 import "./ProductsList.scss";
 
 function ProductsList({ products }) {
-  if (products.length === 0) {
+  if (products?.length === 0) {
     return (
       <div className="no-products">
         Товарів в даній категорії нема в наявності
@@ -13,16 +13,15 @@ function ProductsList({ products }) {
 
   return (
     <div className="products-list">
-      {products.map((product, index) => {
+      {products?.map((product, index) => {
         return (
           <Product
-            custom={index + 1}
-            key={product.id}
-            id={product.id}
-            img={product.img}
+            key={index}
+            id={product._id}
+            img={product.image}
             price={product.price}
             name={product.name}
-            label={product.label}
+            label={product.discount}
           />
         );
       })}

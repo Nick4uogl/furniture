@@ -8,12 +8,12 @@ import { CartProvider } from "./CartContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <CartProvider>
-      <BrowserRouter>
-        <ScrollToTop />
-        <App />
-      </BrowserRouter>
-    </CartProvider>
-  </React.StrictMode>
+  // <React.StrictMode>
+  <CartProvider>
+    <BrowserRouter>
+      <ScrollToTop />
+      <App />
+    </BrowserRouter>
+  </CartProvider>
+  //  </React.StrictMode>
 );

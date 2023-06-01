@@ -8,6 +8,7 @@
         max-width: 545px;
         margin: 0 auto;
         padding: 0px 15px;
+        text-align: center;
     }
 
     &__title {
@@ -17,6 +18,18 @@
         line-height: rem(42);
         text-align: center;
         @include adaptiveValue("margin-bottom", 60, 30);
+    }
+
+    &__loading {
+        text-align: center;
+        margin-top: 100px;
+    }
+
+    &__error {
+        font-size: 24px;
+        font-weight: 500;
+        text-align: center;
+        margin-top: 70px;
     }
 
     &__item {
@@ -85,6 +98,24 @@
 
     &__item-btn-plus {
         border-radius: 0px 5px 5px 0px;
+    }
+
+    &__button {
+        display: inline-block;
+        background: #6eeb83;
+        border-radius: 5px;
+        padding: 13px 35px;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 21px;
+        color: #ffffff;
+        margin-top: 70px;
+        transition: background 0.3s ease;
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: #4abb5d;
+            }
+        }
     }
 }
 

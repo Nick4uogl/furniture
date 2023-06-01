@@ -55,7 +55,7 @@ function Header() {
             </li>
             <li className="menu__item">
               <NavLink
-                to={"furniture/about"}
+                to={"/about"}
                 className={({ isActive, isPending }) =>
                   isActive ? "active-item" : isPending ? "pending" : ""
                 }
@@ -65,7 +65,7 @@ function Header() {
             </li>
             <li className="menu__item">
               <NavLink
-                to={"furniture/products"}
+                to={"/products"}
                 className={({ isActive, isPending }) =>
                   isActive ? "active-item" : isPending ? "pending" : ""
                 }
